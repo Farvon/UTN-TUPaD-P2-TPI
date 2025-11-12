@@ -87,28 +87,32 @@ El sistema permite gestionar dos entidades principales con las siguientes operac
 Ejecutar el siguiente script SQL en MySQL:
 
 `````sql
-CREATE DATABASE IF NOT EXISTS dbtpip2;
-USE dbtpip2;
+CREATE DATABASE IF NOT EXISTS tpip2;
+USE tpip2;
 
--- TO-DO Crear base de datos
+CREATE TABLE Domicilios (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    eliminado BOOLEAN DEFAULT FALSE,
+    calle VARCHAR(100) NOT NULL,
+    numero INT
+ );
 
--- CREATE TABLE domicilios (
---     id INT AUTO_INCREMENT PRIMARY KEY,
---     calle VARCHAR(100) NOT NULL,
---     numero VARCHAR(10) NOT NULL,
---     eliminado BOOLEAN DEFAULT FALSE
--- );
+ CREATE TABLE Empresas (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    eliminado BOOLEAN DEFAULT FALSE,
+    razonSocial VARCHAR(120) NOT NULL,
+    cuit VARCHAR(13) NOT NULL UNIQUE,
+    actividadPrincipal VARCHAR(80),
+    email VARCHAR(120),
+    domicilioFiscal_id BIGINT UNIQUE,  -- Relación 1 a 1 con DomicilioFiscal
 
--- CREATE TABLE personas (
---     id INT AUTO_INCREMENT PRIMARY KEY,
---     nombre VARCHAR(50) NOT NULL,
---     apellido VARCHAR(50) NOT NULL,
---     dni VARCHAR(20) NOT NULL UNIQUE,
---     domicilio_id INT,
---     eliminado BOOLEAN DEFAULT FALSE,
---     FOREIGN KEY (domicilio_id) REFERENCES domicilios(id)
--- );
--- ```
+    CONSTRAINT fk_empresa_domicilio
+        FOREIGN KEY (domicilioFiscal_id)
+        REFERENCES Domicilios(id)
+        ON UPDATE CASCADE
+        ON DELETE SET NULL
+ );
+ ```
 
 ### 2. Compilar el Proyecto
 
