@@ -426,7 +426,7 @@ UTN-TUPaD-P2-TPI/
 ├── Database/            # Contiene las consultas necesarias para la creacion y llenado inicial de la base de datos.
 ├── README.md            # Este archivo
 └── HISTORIAS_DE_USUARIO.md  # Especificaciones funcionales
-└── Diagrama_UML.jpg     # Diagrama UML del proyecto
+└── Diagrama_UML.pdf     # Diagrama UML del proyecto
 └── Informe.pdf          # Informe del proyecto
 ```
 
