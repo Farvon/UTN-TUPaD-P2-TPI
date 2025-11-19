@@ -6,6 +6,10 @@
 
 Este Trabajo Práctico Integrador tiene como objetivo demostrar la aplicación práctica de los conceptos fundamentales de Programación Orientada a Objetos y Persistencia de Datos aprendidos durante el cursado de Programación 2. El proyecto consiste en desarrollar un sistema completo de gestión de empresas y domicilios fiscales que permita realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre estas entidades, implementando una arquitectura robusta y profesional.
 
+### Enlace al video
+
+<a href="https://drive.google.com/file/d/1iVQu0hwD831VUpfBHG_ovGSuK-kwDMLn/view?usp=drive_link"></a>
+
 ### Objetivos Académicos
 
 El desarrollo de este sistema permite aplicar y consolidar los siguientes conceptos clave de la materia:
